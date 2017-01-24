@@ -1,0 +1,10 @@
+<div class="alert alert-app-level alert-{{service.type}}" *ngIf="service.show" [@alert]>
+    <button type="button" class="close" aria-label="Close" (click)="service.close()">
+        <clr-icon aria-hidden="true" shape="close"></clr-icon>
+    </button>
+    <div class="alert-item">
+        <div class="alert-text">
+            {{service.message}}
+        </div>
+    </div>
+</div>
