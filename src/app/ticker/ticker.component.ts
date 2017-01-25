@@ -25,13 +25,13 @@ export class TickerComponent implements OnInit {
   interval: any;
   page: number = 0;
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.interval = setInterval(() => {
       this.nextStock();
     }, 3000);
   }
 
-  ngOnChanges() {
+  ngOnChanges(): void {
     if (this._stocks.length && this.stocks.length < 30) {
       if (this.page * 100 > this._stocks.length) {
         this.page = 0;
@@ -42,8 +42,7 @@ export class TickerComponent implements OnInit {
     }
   }
 
-  private nextStock() {
+  private nextStock(): void {
     this.stocks.splice(0, 1);
   }
-
 }

@@ -23,9 +23,9 @@
   <tfoot>
     <tr>
       <th>Totals</th>
-      <th>{{cost | currency:'USD':true:'.2'}}</th>
-      <th>{{value | currency:'USD':true:'.2'}}</th>
-      <th>{{change | currency:'USD':true:'.2'}}</th>
+      <th>{{accountService.cost | currency:'USD':true:'.2'}}</th>
+      <th>{{accountService.value | currency:'USD':true:'.2'}}</th>
+      <th>{{accountService.value - accountService.cost | currency:'USD':true:'.2'}}</th>
       <th></th>
     </tr>
   </tfoot>

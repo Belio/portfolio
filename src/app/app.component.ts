@@ -1,57 +1,31 @@
-import { Component, OnInit } from '@angular/core';
-import { StocksService } from './services/stocks.service';
-import { AlertService } from './services/alert.service';
-import { AccountService } from './services/account.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [
-    StocksService, 
-    AlertService,
-    AccountService
-  ]
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-  interval: any;
-  stocks: any = [];
-  refresh: boolean = true;
+export class AppComponent implements OnInit, OnDestroy {
 
-  constructor(
-    private service: StocksService, 
-    private alertService: AlertService,
-    private accountService: AccountService) {}
+  constructor() {}
 
-  ngOnInit() {
-    this.accountService.init();
-    this.load();
+  ngOnInit(): void {
     
-    this.interval = setInterval(() => {
-      if (this.refresh) {
-        this.load();
-      }
-    }, 15000);
   }
 
-  private load() {
-    this.service.getStocks().then(stocks => {
-      this.stocks = stocks;
-    });
+  ngOnDestroy(): void {
+    
   }
 
-  ngOnDestroy() {
-    clearInterval(this.interval);
+  toggleRefresh(): void {
+    
   }
 
-  toggleRefresh() {
-    this.refresh = !this.refresh;
-    let onOff = (this.refresh) ? 'on' : 'off';
-    this.alertService.alert(`You have turned automatic refresh ${onOff}`, 'info', 0);
+  reset(): void {
+    
   }
 
-  reset() {
-    this.accountService.reset();
-    this.alertService.alert(`You have reset your portfolio!`);
+  private load(): void {
+    
   }
 }

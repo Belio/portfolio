@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AccountService } from '../services/account.service';
 
 @Component({
@@ -11,8 +11,8 @@ export class StocksComponent {
 
   constructor(private accountService: AccountService) {}
 
-  buy(stock) {
-    this.accountService.purchase(stock);
+  buy(stock): void {
+
   }
 
 }
