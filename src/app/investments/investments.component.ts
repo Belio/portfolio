@@ -16,6 +16,6 @@ export class InvestmentsComponent {
   constructor(private accountService: AccountService) {}
 
   sell(index): void {
-
+    this.accountService.sell(index);
   }
 }
