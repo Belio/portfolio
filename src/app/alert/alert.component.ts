@@ -1,4 +1,5 @@
 import { Component, trigger, state, style, transition, animate } from '@angular/core';
+import { AlertService } from '../services/alert.service';
 
 @Component({
   selector: 'app-alert',
@@ -23,5 +24,5 @@ import { Component, trigger, state, style, transition, animate } from '@angular/
   ]
 })
 export class AlertComponent {
-  constructor() { }
+  constructor(private service: AlertService) { }
 }
