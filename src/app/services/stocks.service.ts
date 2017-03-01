@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { ConfigService } from './config.service';
 import { AccountService } from './account.service';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class StocksService {
